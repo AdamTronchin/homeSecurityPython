@@ -47,11 +47,15 @@ def sensorChanges(val1, val2):#compare new sensor values to the last recorded se
 
 skip = 0#check if we should read the sensors or check for changes
 
-for x in range(0, len(sensorNames)):
-  if skip == 0:#check where to store the sensor data
-    sensorValues[x] = GPIO.input(sensorPorts[x])
-    skip = 1 #change skip value
-  else:
-    sensorValues2[x] = GPIO.input(sensorPorts[x])
-    skip = 0 #change skip value
-sensorChanges(sensorValues, sensorValues2)
+def readSensors():
+  for x in range(0, len(sensorNames)):
+    if skip == 0:#check where to store the sensor data
+      sensorValues[x] = GPIO.input(sensorPorts[x])
+      skip = 1 #change skip value
+    else:
+      sensorValues2[x] = GPIO.input(sensorPorts[x])
+      skip = 0 #change skip value
+  sensorChanges(sensorValues, sensorValues2)
+
+for 1==1:
+  readSensors()
