@@ -1,7 +1,7 @@
 import smbus
 import time
 import RPi.GPIO as GPIO
-import adafruit_dht
+#import adafruit_dht
 from database import DatabaseBackend
 
 GPIO.setmode(GPIO.BCM)
@@ -54,4 +54,4 @@ for x in range(0, len(sensorNames)):
   else:
     sensorValues2[x] = GPIO.input(sensorPorts[x])
     skip = 0 #change skip value
- sensorChanges(sensorValues, sensorValues2)
+sensorChanges(sensorValues, sensorValues2)
