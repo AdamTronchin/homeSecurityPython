@@ -57,5 +57,5 @@ def readSensors():
       skip = 0 #change skip value
   sensorChanges(sensorValues, sensorValues2)
 
-for 1==1:
+while 1==1:
   readSensors()
