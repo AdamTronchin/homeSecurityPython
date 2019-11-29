@@ -15,7 +15,7 @@ sensorValues2 = [0, 0, 0, 0]
 sensorPorts = [17, 23, 24, 25]
 
 # other variables
-skip = 0 # if we should read the sensors or check for changes
+global skip = 0 # if we should read the sensors or check for changes
 
 #Panel bus Address variables
 panel1 = 0x07
