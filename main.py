@@ -45,7 +45,7 @@ def sensorChanges(val1, val2):#compare new sensor values to the last recorded se
       reportChanges(val2)#call method to update database
 
 
-skip = 0 # if we should read the sensors or check for changes
+global skip = 0 # if we should read the sensors or check for changes
 
 def readSensors():
   for x in range(0, len(sensorNames)):
