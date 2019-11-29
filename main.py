@@ -14,6 +14,9 @@ sensorValues = [0, 0, 0, 0]
 sensorValues2 = [0, 0, 0, 0]
 sensorPorts = [17, 23, 24, 25]
 
+# other variables
+skip = 0 # if we should read the sensors or check for changes
+
 #Panel bus Address variables
 panel1 = 0x07
 panel2 = 0x08
@@ -43,9 +46,6 @@ def sensorChanges(val1, val2):#compare new sensor values to the last recorded se
   for i in range(0, len(sensorNames)):
     if val1 != val2:
       reportChanges(val2)#call method to update database
-
-
-global skip = 0 # if we should read the sensors or check for changes
 
 def readSensors():
   for x in range(0, len(sensorNames)):
