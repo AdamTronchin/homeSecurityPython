@@ -2,7 +2,10 @@ from threading import Thread
 import mysql.connector
 
 class DatabaseBackend(Thread):
- def updateValue(name, value):
+ def initDatabase():
+    return 1
+
+ def updateValue(self,name, value):
     print(name)
     print(value)
     
