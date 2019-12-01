@@ -17,7 +17,7 @@ class DatabaseBackend(Thread):
     print(name)
     print(value)
     
- def readValue():
+ def readValue(self):
     mycursor.execute("SELECT * FROM customers")
     myresult = mycursor.fetchall()
     for x in myresult:
