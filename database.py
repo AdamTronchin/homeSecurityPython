@@ -8,10 +8,11 @@ mydb = mysql.connector.connect(
   database="homeSecurity"
 )
 
+mycursor = mydb.cursor()
+
 class DatabaseBackend(Thread):
  def initDatabase(self):
-    mycursor = mydb.cursor()
-
+    print("Pass") 
 
  def updateValue(self,name, value):
     print(name)
