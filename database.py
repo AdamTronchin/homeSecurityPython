@@ -9,7 +9,7 @@ mydb = mysql.connector.connect(
 )
 
 class DatabaseBackend(Thread):
- def initDatabase():
+ def initDatabase(self):
     mycursor = mydb.cursor()
 
 
@@ -18,7 +18,7 @@ class DatabaseBackend(Thread):
     print(value)
     
  def readValue(self):
-    mycursor.execute("SELECT * FROM customers")
+    mycursor.execute("SELECT * FROM doors")
     myresult = mycursor.fetchall()
     for x in myresult:
       print(x)
