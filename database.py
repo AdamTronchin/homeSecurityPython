@@ -1,13 +1,24 @@
 from threading import Thread
 import mysql.connector
 
+mydb = mysql.connector.connect(
+  host="192.168.2.54",
+  user="pi",
+  passwd="PASSpass9",
+  database="homeSecurity"
+)
+
 class DatabaseBackend(Thread):
  def initDatabase():
-    return 1
+    mycursor = mydb.cursor()
+
 
  def updateValue(self,name, value):
     print(name)
     print(value)
     
  def readValue():
-    return 1
+    mycursor.execute("SELECT * FROM customers")
+    myresult = mycursor.fetchall()
+    for x in myresult:
+      print(x)
