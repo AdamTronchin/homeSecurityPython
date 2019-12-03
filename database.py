@@ -13,7 +13,7 @@ mycursor = mydb.cursor()
 class DatabaseBackend(Thread):
  def updateValue(self, name, value):
    #convertToASIC(name)
-   sql = "UPDATE doors SET"+name+"= 'Canyon 123' WHERE address = 'Valley 345'"
+   sql = "UPDATE doors SET value = '"+str(value)+"' WHERE name = '"+str(name)+"'"
    mycursor.execute(sql)
    mydb.commit()
  
