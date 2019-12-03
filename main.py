@@ -15,7 +15,7 @@ sensorValues2 = [0, 0, 0, 0]
 sensorPorts = [17, 23, 24, 25]
 
 # other variables
-global skip = 0 # if we should read the sensors or check for changes
+int skip = 0 # if we should read the sensors or check for changes
 
 #Panel bus Address variables
 panel1 = 0x07
@@ -55,7 +55,7 @@ def readSensors():
     else:
       sensorValues2[x] = GPIO.input(sensorPorts[x])
       skip = 0 #change skip value
-  sensorChanges(sensorValues, sensorValues2)
 
 while 1==1:
   readSensors()
+  sensorChanges(sensorValues, sensorValues2)
