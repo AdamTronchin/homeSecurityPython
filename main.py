@@ -15,7 +15,6 @@ sensorValues2 = [0, 0, 0, 0]
 sensorPorts = [17, 23, 24, 25]
 
 # other variables
-global skip = 0 # if we should read the sensors or check for changes
 
 #Panel bus Address variables
 panel1 = 0x07
@@ -47,15 +46,19 @@ def sensorChanges(val1, val2):#compare new sensor values to the last recorded se
     if val1 != val2:
       reportChanges(val2)#call method to update database
 
-def readSensors():
+def readSensors(skip):
   for x in range(0, len(sensorNames)):
     if skip == 0: #check where to store the sensor data
       sensorValues[x] = GPIO.input(sensorPorts[x])
-      skip = 1 #change skip value
     else:
       sensorValues2[x] = GPIO.input(sensorPorts[x])
-      skip = 0 #change skip value
   sensorChanges(sensorValues, sensorValues2)
 
+skip = 0
 while 1==1:
-  readSensors()
+  readSensors(skip)
+  if(skip == 0){
+    skip = 1
+  }else{
+    skip = 0
+  }
