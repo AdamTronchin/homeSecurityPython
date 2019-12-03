@@ -9,10 +9,10 @@ GPIO.setmode(GPIO.BCM)
 #Setup SQL Connection
 
 #Sensor Variables
-sensorNames = ["frontDoor", "livingRoomDoor", "backDoor", "garageDoor"]
-sensorValues = [0, 0, 0, 0]
-sensorValues2 = [0, 0, 0, 0]
-sensorPorts = [17, 23, 24, 25]
+sensorNames = ["frontDoor"]
+sensorValues = [0]
+sensorValues2 = [0]
+sensorPorts = [17]
 
 # other variables
 skip = 0 # if we should read the sensors or check for changes
