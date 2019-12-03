@@ -35,9 +35,9 @@ for i in sensorPorts:
  GPIO.setup(i,GPIO.IN)#Setup all gpio sensors
 
 #Setup functions
-def reportChanges(val):
-  #d.updateValue(val)
-  print(val)
+def reportChanges(pos):
+  d.updateValue(d, sensorNames[pos], sensorValues2[pos])
+  print(pos)
 
 def reportPanel(value):#Write data to panel
     bus.write_byte(panel2, value)
@@ -62,14 +62,9 @@ while 1==1:
   i = i+1
   print("Loop count:")
   print(i)
-  time.sleep(0.8)
+  time.sleep(0.5)
   readSensors(skip)
   sensorChanges(sensorValues, sensorValues2)
-  print("***************")
-  print(sensorValues[0])
-  print("***************")
-  print(sensorValues2[0])
-  print("***************")
   if(skip == 0):
     skip = 1
   else:
