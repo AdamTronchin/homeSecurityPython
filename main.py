@@ -46,7 +46,7 @@ def reportPanel(value):#Write data to panel
 def sensorChanges(val1, val2):#compare new sensor values to the last recorded sensor values
   for i in range(0, len(sensorNames)):
     if val1 != val2:
-      reportChanges(val2)#call method to update database
+      reportChanges(0)#call method to update database
 
 def readSensors(skip):
   for x in range(0, len(sensorNames)):
