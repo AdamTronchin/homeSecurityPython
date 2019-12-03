@@ -36,7 +36,7 @@ for i in sensorPorts:
 
 #Setup functions
 def reportChanges(pos):
-  d.updateValue(d, sensorNames[pos], sensorValues2[pos])
+  d.updateValue(sensorNames[pos], sensorValues2[pos])
   print(pos)
 
 def reportPanel(value):#Write data to panel
