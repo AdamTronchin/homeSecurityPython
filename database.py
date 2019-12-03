@@ -12,11 +12,7 @@ mycursor = mydb.cursor()
 
 class DatabaseBackend(Thread):
  def updateValue(self, name, value):
-    print(convertToASIC(name))
-    print(value)
-    
- def readValue(self):
-    return 1
+    convertToASIC(name)
  
  def convertToASIC(string):
     for x in string:
