@@ -59,7 +59,8 @@ skip = 0
 while 1==1:
   i = 0
   i = i+1
-  print("Loop count "+i)
+  print("Loop count:")
+  print(i)
   time.sleep(0.1)
   readSensors(skip)
   sensorChanges(sensorValues, sensorValues2)
