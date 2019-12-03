@@ -59,6 +59,7 @@ def readSensors(skip):
 skip = 0
 while 1==1:
   time.sleep(0.5)
+  print("***")
   readSensors(skip)
   sensorChanges(sensorValues, sensorValues2)
   if(skip == 0):
