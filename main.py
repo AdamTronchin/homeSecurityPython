@@ -9,10 +9,10 @@ GPIO.setmode(GPIO.BCM)
 #Setup SQL Connection
 
 #Sensor Variables
-sensorNames = ["frontDoor"]
-sensorValues = [0]
-sensorValues2 = [0]
-sensorPorts = [17]
+sensorNames = ["frontDoor", "backDoor"]
+sensorValues = [0,0]
+sensorValues2 = [0,0]
+sensorPorts = [17,27]
 
 # other variables
 skip = 0 # if we should read the sensors or check for changes
@@ -67,7 +67,6 @@ def readSensors(skip):
 skip = 0
 while 1==1:
   time.sleep(0.1)
-  print("***")
   readSensors(skip)
   sensorChanges(sensorValues, sensorValues2)
   if(skip == 0):
