@@ -45,7 +45,7 @@ for i in sensorPorts:
 #Setup functions
 def reportChanges(pos):
   d.updateValue(sensorNames[pos], sensorValues[pos])
-  print(pos)
+  print(sensorNames[pos]+str(sensorValues[pos]))
 
 def reportPanel(value):#Write data to panel
     bus.write_byte(panel2, value)
@@ -54,7 +54,7 @@ def reportPanel(value):#Write data to panel
 def sensorChanges(val1, val2):#compare new sensor values to the last recorded sensor values
   for i in range(0, len(sensorNames)):
     if val1 != val2:
-      reportChanges(0)#call method to update database
+      reportChanges(sensorNames[i])#call method to update database
 
 def readSensors(skip):
   for x in range(0, len(sensorNames)):
