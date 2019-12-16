@@ -38,7 +38,7 @@ for i in sensorPorts:
 
 for i in sensorPorts:
   sensorList.append(Button(sensorPorts))
-  
+
 #Setup Temp Sensors
 #dhtDevice = adafruit_dht.DHT22(board.D18)
  #temperature_c = dhtDevice.temperature
@@ -61,14 +61,17 @@ def sensorChanges(val1, val2):#compare new sensor values to the last recorded se
     if val1 != val2:
       reportChanges(i)#call method to update database
 
+#sensorValues[x] = GPIO.input(sensorPorts[x])
 def readSensors():
   for x in range(0, len(sensorNames)):
-   sensorValues[x] = GPIO.input(sensorPorts[x])
+   sensorValues[x] = sensorList[x]
     
-
+#sensorValues2[x] = GPIO.input(sensorPorts[x])
 def readSensors2():
   for x in range(0, len(sensorNames)):
-   sensorValues2[x] = GPIO.input(sensorPorts[x])
+   sensorValues2[x] = sensorList[x]
+
+   
       
 
 skip = 0
