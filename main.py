@@ -1,6 +1,7 @@
 import smbus
 import time
 import RPi.GPIO as GPIO
+from gpiozero import Button
 #import adafruit_dht
 from database import DatabaseBackend
 
@@ -13,6 +14,7 @@ sensorNames = ["frontDoor", "backDoor"]
 sensorValues = [0,0]
 sensorValues2 = [0,0]
 sensorPorts = [17,27]
+sensorList = []
 
 # other variables
 skip = 0 # if we should read the sensors or check for changes
@@ -34,6 +36,9 @@ d = DatabaseBackend()
 for i in sensorPorts:
  GPIO.setup(i,GPIO.IN)#Setup all gpio sensors
 
+for i in sensorPorts:
+  sensorList.append(Button(sensorPorts))
+  
 #Setup Temp Sensors
 #dhtDevice = adafruit_dht.DHT22(board.D18)
  #temperature_c = dhtDevice.temperature
