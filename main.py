@@ -56,20 +56,23 @@ def sensorChanges(val1, val2):#compare new sensor values to the last recorded se
     if val1 != val2:
       reportChanges(i)#call method to update database
 
-def readSensors(skip):
+def readSensors():
   for x in range(0, len(sensorNames)):
-    if skip == 0: #check where to store the sensor data
-      sensorValues[x] = GPIO.input(sensorPorts[x])
-    else:
-      sensorValues2[x] = GPIO.input(sensorPorts[x])
+   sensorValues[x] = GPIO.input(sensorPorts[x])
+    
+
+def readSensors2():
+  for x in range(0, len(sensorNames)):
+   sensorValues2[x] = GPIO.input(sensorPorts[x])
       
 
 skip = 0
 while 1==1:
-  time.sleep(0.1)
-  readSensors(skip)
+  time.sleep(0.05)
   sensorChanges(sensorValues, sensorValues2)
   if(skip == 0):
     skip = 1
+    readSensors()
   else:
     skip = 0
+    readSensors2()
