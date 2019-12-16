@@ -11,8 +11,8 @@ GPIO.setmode(GPIO.BCM)
 
 #Sensor Variables
 sensorNames = ["frontDoor", "backDoor"]
-sensorValues = [0,0]
-sensorValues2 = [0,0]
+sensorValues = [False,False]
+sensorValues2 = [False, False]
 sensorPorts = [17,27]
 sensorList = []
 
@@ -76,7 +76,6 @@ def readSensors2():
 
 skip = 0
 while 1==1:
-  time.sleep(0.2)
   sensorChanges(sensorValues, sensorValues2)
   if(skip == 0):
     skip = 1
