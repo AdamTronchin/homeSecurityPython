@@ -1,9 +1,9 @@
 import smbus
-import time
 import RPi.GPIO as GPIO
 from gpiozero import Button
 #import adafruit_dht
 from database import DatabaseBackend
+import time
 
 GPIO.setmode(GPIO.BCM)
 
